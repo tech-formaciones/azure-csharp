@@ -39,7 +39,7 @@ namespace Formacion.Azure.Functions.FunctionApp3
 
                 _logger.LogInformation("Function3 C# HTTP trigger -> proceso finalizado.");
 
-                req.HttpContext.Response.Headers.ContentType = "text/plain";
+                req.HttpContext.Response.Headers.ContentType = "text/plain; charset=UTF-8";
                 req.HttpContext.Response.StatusCode = 200;
                 req.HttpContext.Response.WriteAsync(mensaje);
 
