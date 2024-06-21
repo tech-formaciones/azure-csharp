@@ -4,7 +4,7 @@ namespace Formacion.Azure.Storage.ConsoleApp2
 {
     internal class Program
     {
-        static string connectionString = "DefaultEndpointsProtocol=https;AccountName=demostrbcr;AccountKey=ZNEeFEWGN16uckMf03HlnNdkt7C5L3Jw9/wflmysFpjp11mlxHR+VGg+CKRYSQtDMxlgc8r9Nm2M+AStCeAulg==;EndpointSuffix=core.windows.net";
+        static string connectionString = "inserta tu cadena de conexión";
         static BlobServiceClient client;
 
         static void Main(string[] args)

@@ -6,8 +6,8 @@ namespace Formacion.Azure.Storage.ConsoleApp1
 {
     internal class Program
     {
-        static string storageName = "demostrbcr";
-        static string storageKey = @"ZNEeFEWGN16uckMf03HlnNdkt7C5L3Jw9/wflmysFpjp11mlxHR+VGg+CKRYSQtDMxlgc8r9Nm2M+AStCeAulg==";
+        static string storageName = "inserta el nombre de tu cuenta de almacenamiento";
+        static string storageKey = @"inserta tu clave";
 
         static void Main(string[] args)
         {
