@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "func", "Lab02.func\func.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos Storage Account", "Demos Storage Account", "{0A352493-7162-41D5-B99C-825368FCA3D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formacion.Azure.Storage.ConsoleApp1", "Formacion.Azure.Storage.ConsoleApp1\Formacion.Azure.Storage.ConsoleApp1.csproj", "{DDF582FE-5184-4EE9-ADEA-6FEDB390F5DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formacion.Azure.Storage.ConsoleApp1", "Formacion.Azure.Storage.ConsoleApp1\Formacion.Azure.Storage.ConsoleApp1.csproj", "{DDF582FE-5184-4EE9-ADEA-6FEDB390F5DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formacion.Azure.AppService.WebJobs.ConsoleApp3", "Formacion.Azure.AppService.WebJobs.ConsoleApp3\Formacion.Azure.AppService.WebJobs.ConsoleApp3.csproj", "{89C5E357-F9B7-4CBE-8AF3-C7D2D162CE65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formacion.Azure.Storage.ConsoleApp2", "Formacion.Azure.Storage.ConsoleApp2\Formacion.Azure.Storage.ConsoleApp2.csproj", "{88693138-6A9D-45A8-A89D-57D22CEE4CDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,14 @@ Global
 		{DDF582FE-5184-4EE9-ADEA-6FEDB390F5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDF582FE-5184-4EE9-ADEA-6FEDB390F5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDF582FE-5184-4EE9-ADEA-6FEDB390F5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C5E357-F9B7-4CBE-8AF3-C7D2D162CE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C5E357-F9B7-4CBE-8AF3-C7D2D162CE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C5E357-F9B7-4CBE-8AF3-C7D2D162CE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C5E357-F9B7-4CBE-8AF3-C7D2D162CE65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88693138-6A9D-45A8-A89D-57D22CEE4CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88693138-6A9D-45A8-A89D-57D22CEE4CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88693138-6A9D-45A8-A89D-57D22CEE4CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88693138-6A9D-45A8-A89D-57D22CEE4CDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +90,8 @@ Global
 		{46F250CD-83B9-4CF5-A159-C2173DB419EE} = {822B22B4-0C20-4E2B-A93C-F3259C8A75F7}
 		{43ADC7C8-1ED6-41A1-8CC0-88E058C9B295} = {EB9CC58D-F52C-4A7F-B9B0-382FE5F58343}
 		{DDF582FE-5184-4EE9-ADEA-6FEDB390F5DF} = {0A352493-7162-41D5-B99C-825368FCA3D7}
+		{89C5E357-F9B7-4CBE-8AF3-C7D2D162CE65} = {7B6F65D3-59CF-4911-8174-D81B9C28A930}
+		{88693138-6A9D-45A8-A89D-57D22CEE4CDC} = {0A352493-7162-41D5-B99C-825368FCA3D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6BF02C58-2518-47A1-856F-1774A80C525D}
