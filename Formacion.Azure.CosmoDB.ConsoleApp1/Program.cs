@@ -1,11 +1,12 @@
 ﻿using Microsoft.Azure.Cosmos;
+using Microsoft.Azure.Cosmos.Linq;
 
 namespace Formacion.Azure.CosmoDB.ConsoleApp1
 {
     internal class Program
     {
-        static readonly string endpointCosmosDB = "";
-        static readonly string keyCosmosDB = "==";
+        static readonly string endpointCosmosDB = "escribe el endpoint de la cuenta";
+        static readonly string keyCosmosDB = "escribe una de las claves";
 
         static CosmosClient clientCosmosDB;
 
@@ -15,7 +16,7 @@ namespace Formacion.Azure.CosmoDB.ConsoleApp1
 
             Console.Clear();
             //GetDatabases();
-            CreateRecord("DemoDB", "productos");
+            QueryRecords2("DemoDB", "productos");
         }
 
         static void GetDatabases()
@@ -78,6 +79,88 @@ namespace Formacion.Azure.CosmoDB.ConsoleApp1
             
             var result2 = clientContainer.CreateItemAsync(producto2, new PartitionKey("Bebidas")).Result;
             Console.WriteLine($"Producto creado con ID {result2.Resource.id}.");
+        }
+
+        static void QueryRecords(string databaseName, string containerName)
+        {
+            var clientDatabase = clientCosmosDB.GetDatabase(databaseName);
+            var clientContainer = clientDatabase.GetContainer(containerName);
+
+            // Listado completo de los items en el contenedor
+            string sqlQuery = "SELECT * FROM r";
+
+            //var resultIterator = clientContainer.GetItemQueryIterator<Producto>(sqlQuery);
+            //if (resultIterator.HasMoreResults)
+            //{
+            //    var productos = resultIterator.ReadNextAsync().Result;
+            //    foreach (var producto in productos)
+            //    {
+            //        Console.WriteLine($" -> " +
+            //            $"{producto.id}# " +
+            //            $"{producto.descripción} " +
+            //            $"- {producto.precio.ToString("N2")}");
+            //    }
+            //}
+            //else Console.WriteLine("No hay datos");
+
+            var resultIterator = clientContainer.GetItemQueryIterator<Producto>(sqlQuery);
+            while (resultIterator.HasMoreResults)
+            {
+                var productos = resultIterator.ReadNextAsync().Result;
+                foreach (var producto in productos)
+                {
+                    Console.WriteLine($" -> " +
+                        $"{producto.id}# " +
+                        $"{producto.descripción} " +
+                        $"- {producto.precio.ToString("N2")}");
+                }
+            }
+        }
+
+        static void QueryRecords2(string databaseName, string containerName)
+        {
+            var clientDatabase = clientCosmosDB.GetDatabase(databaseName);
+            var clientContainer = clientDatabase.GetContainer(containerName);
+
+            // Listado de los items en el contenedor con precio igual o mayor a 2
+            string sqlQuery = "SELECT * FROM r WHERE r.precio >= 2";
+
+
+            var resultIterator = clientContainer.GetItemQueryIterator<Producto>(sqlQuery);
+            while (resultIterator.HasMoreResults)
+            {
+                var productos = resultIterator.ReadNextAsync().Result;
+                foreach (var producto in productos)
+                {
+                    Console.WriteLine($" -> " +
+                        $"{producto.id}# " +
+                        $"{producto.descripción} " +
+                        $"- {producto.precio.ToString("N2")}");
+                }
+            }
+        }
+
+        static void QueryRecords3(string databaseName, string containerName)
+        {
+            var clientDatabase = clientCosmosDB.GetDatabase(databaseName);
+            var clientContainer = clientDatabase.GetContainer(containerName);
+
+            // Listado de los items en el contenedor con precio igual o mayor a 2
+            var resultIterator = clientContainer.GetItemLinqQueryable<Producto>()
+                .Where(r => r.precio >= 2)
+                .ToFeedIterator();
+
+            while (resultIterator.HasMoreResults)
+            {
+                var productos = resultIterator.ReadNextAsync().Result;
+                foreach (var producto in productos)
+                {
+                    Console.WriteLine($" -> " +
+                        $"{producto.id}# " +
+                        $"{producto.descripción} " +
+                        $"- {producto.precio.ToString("N2")}");
+                }
+            }
         }
     }
 
