@@ -15,6 +15,9 @@ namespace Formacion.Azure.Tables.ConsoleApp1
             // Añadir una nueva tabla si no existe
             clientService.CreateTableIfNotExists("clientes");
 
+            // Borrar una tabla
+            clientService.CreateTable("clientes");
+
             // Listar tables
             var tables = clientService.Query();
             foreach ( var table in tables ) Console.WriteLine($"Tabla: {table.Name}");
@@ -36,7 +39,7 @@ namespace Formacion.Azure.Tables.ConsoleApp1
                 precio = 2.60
             };
 
-            //clientTables.AddEntity(producto);
+            clientTables.AddEntity(producto);
             //Console.WriteLine("Producto insertado correctamente");
 
             // Consultas
