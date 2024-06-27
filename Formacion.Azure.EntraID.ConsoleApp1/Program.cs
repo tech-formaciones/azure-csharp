@@ -18,9 +18,9 @@ namespace Formacion.Azure.EntraID.ConsoleApp1
             //////////////////////////////////////////////////////////////////////////////////////////////
 
             app = ConfidentialClientApplicationBuilder
-                .Create("3ad47431-22b3-4545-8e8d-51652cad913e")
-                .WithClientSecret("P6O8Q~Ac8P4Et_QJF3sy11S-68AO6o5VUhjwJaqf")
-                .WithAuthority("https://login.microsoftonline.com/b553b4ad-a812-4b1d-8023-93468b1c84a0")
+                .Create("<Id Application>")
+                .WithClientSecret("<Secret Application>")
+                .WithAuthority("https://login.microsoftonline.com/<Id Tenant>")
                 .Build();
 
             ClientCredentialProvider authProvider = new ClientCredentialProvider(app);
