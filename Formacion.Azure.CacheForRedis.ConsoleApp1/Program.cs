@@ -5,7 +5,7 @@ namespace Formacion.Azure.CacheForRedis.ConsoleApp1
 {
     internal class Program
     {
-        static string connectionString = "demoredisbcr.redis.cache.windows.net:6380,password=1EWpuScgTC1DVq2FcWhvbUuejYtlJ8TmzAzCaJVGA14=,ssl=True,abortConnect=False"; 
+        static string connectionString = "cadena de conexión"; 
 
         static void Main(string[] args)
         {
