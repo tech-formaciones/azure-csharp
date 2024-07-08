@@ -23,7 +23,6 @@ namespace Formacion.Azure.EntraID.ConsoleApp1
                 .WithAuthority("https://login.microsoftonline.com/<Id Tenant>")
                 .Build();
 
-            ClientCredentialProvider authProvider = new ClientCredentialProvider(app);
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             /// Generar el token
@@ -34,6 +33,7 @@ namespace Formacion.Azure.EntraID.ConsoleApp1
 
             Console.WriteLine(token.AccessToken);
             Console.ReadKey();
+
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             /// Listado de usuario mediante un cliente HTTP
@@ -61,12 +61,14 @@ namespace Formacion.Azure.EntraID.ConsoleApp1
 
             Console.ReadKey();
 
+
             //////////////////////////////////////////////////////////////////////////////////////////////
             /// Listado de usuario mediante objetos .NET
             //////////////////////////////////////////////////////////////////////////////////////////////
 
             Console.WriteLine("");
 
+            ClientCredentialProvider authProvider = new ClientCredentialProvider(app);
             GraphServiceClient graphClient = new GraphServiceClient(authProvider);
 
             var result = graphClient.Users.Request().GetAsync().Result;
